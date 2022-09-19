@@ -1,0 +1,391 @@
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--c_font);
+}
+
+a:hover{
+    background-color: rgb(43, 48, 94);
+}
+
+#logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#header{
+    box-sizing: border-box;
+    height: 60px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(7, 75, 131)
+}
+
+#menu{
+    display: flex;
+    gap: .5rem;
+}
+
+#menu a{
+    display: block;
+    padding: .5rem;
+}
+
+#btt_mobile{
+    display: none;
+}
+
+@media (max-width: 600px){
+
+    #menu{
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 60px;
+        right: 0px;
+        background-color: rgb(1, 2, 71);
+        height: 0px;
+        transition: 0.6s;
+        z-index: 1000;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+
+    #menu a{
+        text-align: center;
+        padding: 1rem;
+        margin: 1rem;
+        border-bottom: 2px solid #189
+    }
+
+    #btt_mobile{
+        display: flex;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: 0.5rem;
+    }
+
+    #icone{
+        width: 20px;
+        border-top: 2px solid;
+    }
+
+    #icone::after, #icone::before{
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: currentColor;
+        margin-top: 5px;
+        transition: 0.3s;
+        position: relative;
+    }
+
+    #navbar.active #icone{
+        border-top-color: transparent;
+    }
+
+    #navbar.active #menu{
+        height: calc(100vh - 60px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    #navbar.active #icone::after{
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+    #navbar.active #icone::before{
+        transform: rotate(135deg);
+    }
+
+
+
+}
+
+
+.among{
+    display: flex;
+    padding: center;
+    background-color: #b999dd;
+    text-align: center;
+    text-decoration-color: azure;
+    flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section
+{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #121212;
+        
+}
+.bowl
+{
+   position: relative;
+   width: 300px;
+   height: 300px;
+   background-color: rgb(77, 74, 74);
+   border-radius: 50%;
+   border: 8px solid transparent;
+   transform-origin: bottom center;
+   animation: animate 5s linear infinite;
+}
+@keyframes animate
+{
+    0%
+    {
+        filter: hue-rotate(0deg);
+        transform: rotate(0deg);
+    }
+    25%
+    {
+        transform: rotate(15deg);
+    }
+    50%
+    {
+        transform: rotate(0deg);
+    }
+    75%
+    {
+        transform: rotate(-15deg);
+    }
+    100%
+    {
+        filter: hue-rotate(360deg);
+        transform: rotate(0deg);
+    }
+}
+.bowl::before
+{
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 30px;
+    border: 15px solid rgb(122, 120, 120);
+    border-radius: 50%;
+    box-shadow: 0 10px #222;
+}
+.bowl::after
+{
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 150px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.05);
+}
+.liquid
+{
+    position: absolute;
+    top: 600px;
+    left: 784px;
+    right: 784px;
+    bottom: 190px;
+    background: #41c1fb;
+    border-bottom-left-radius: 150px;
+    border-bottom-right-radius: 150px;
+    filter: drop-shadow(0 0 80px #41c1fb);
+
+    transform-origin: bottom center;
+    animation: animateLiquid 5s linear infinite;
+
+}
+    
+
+@keyframes animateLiquid
+{
+    0%
+    {
+        
+        transform: rotate(0deg);
+    }
+    25%
+    {
+        
+        transform: rotate(15deg);
+    }
+    50%
+    {
+        
+        transform: rotate(0deg);
+    }
+    75%
+    {
+        
+        transform: rotate(-15deg);
+    }
+    100%
+    {
+        
+        transform: rotate(0deg);
+    }
+    
+
+}
+
+.liquid::before
+{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 100%;
+    height: 20px;
+    background: #1fa4e0;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 80px #41c1fb);
+
+}
+@media (max-width: 700px) {
+    
+}
+.shadow
+{
+    position: absolute;
+    top: 780px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+/* PERGUNTAR PRO FERNANDO COMOO DEIXA O LIQUIDO RESPONSIVO*/
+
+body{
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+h3{
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+    padding-top: 10px;
+}
+a{
+    text-decoration: none;
+
+}
+.gal{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 ;
+}
+.produtitos{
+    width: 20%;
+    margin: 15px;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    padding-top: 10xp;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: .4s;
+    background: #f2f2f2;
+}
+.produtitos:hover{
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 
+    0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translate(0px, -8px);
+
+}
+img{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+p{
+    text-align: center;
+    color:#150c66;
+    padding-top: 0 8px;
+
+}
+h6{
+    font-size: 26px;
+    text-align: center;
+    color: rgb(23, 23, 68);
+}
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+
+}
+button{
+    text-align: center;
+    font-size: 24px;
+    color: aliceblue;
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+}
+.buy-1{
+    background: #b999dd;
+}
+.buy-2{
+    background: #b999dd;
+}
+.buy-3{
+    background: #b999dd;
+}
+@media (max-width:1000px){
+    .produtitos{
+        width: 87%;
+    }
+}
+@media (max-width:px){
+    .produtitos{
+        width: 100%;
+    }
+}
